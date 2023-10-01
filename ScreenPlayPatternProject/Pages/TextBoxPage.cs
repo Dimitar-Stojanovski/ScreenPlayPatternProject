@@ -19,19 +19,14 @@ namespace ScreenPlayPatternProject.Pages
         static By permanentAddress = By.Id("permanentAddress");
         static By submitButton = By.Id("submit");
 
-        public static IWebLocator FullNameInput => L(
-            "Text box in Elements Input", userNameInput);
+        public static IWebLocator FullNameInput => L("Text box in Elements Input", userNameInput);
 
-        public static IWebLocator EmailInput => L(
-            "Email to input", userEmail);
+        public static IWebLocator EmailInput => L( "Email to input", userEmail);
 
-        public static IWebLocator CurrentAddressInput => L(
-            "Current Address", currentAdddress);
+        public static IWebLocator CurrentAddressInput => L("Current Address", currentAdddress);
 
-        public static IWebLocator PermanentAddressInput => L(
-            "Permanent Address", permanentAddress);
+        public static IWebLocator PermanentAddressInput => L( "Permanent Address", permanentAddress);
 
-        public static IWebLocator SubmitButton => L(
-            "Submit button", submitButton);
+        public static IWebLocator SubmitButton => L( "Submit button", submitButton);
     }
 }

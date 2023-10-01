@@ -1,6 +1,7 @@
 ﻿using Boa.Constrictor.Screenplay;
 using Boa.Constrictor.Selenium;
 using FluentAssertions;
+using ScreenPlayPatternProject.Interactions;
 using ScreenPlayPatternProject.Pages;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,18 @@ namespace ScreenPlayPatternProject
             Actor.AttemptsTo(Click.On(TextBoxPage.SubmitButton));
 
             Thread.Sleep(3000);
+        }
+
+        [Test]
+        public void ScreenPlayTestWithInteractions()
+        {
+            Actor.AttemptsTo(Navigate.ToUrl(LoginPage.URL));
+
+            Actor.AttemptsTo(Login.WithUser("dimitar", "password"));
+
+            Actor.AttemptsTo(Wait.Until(Appearance.Of(LoginPage.Message),IsEqualTo.True()));
+
+            Actor.AskingFor(Text.Of(LoginPage.Message)).Should().Be("Invalid username or password!");
         }
     }
 }

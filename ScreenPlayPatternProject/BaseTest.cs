@@ -18,7 +18,7 @@ namespace ScreenPlayPatternProject
         public void InitiateScreenPlay()
         {
             ChromeOptions options = new ChromeOptions();
-            //options.AddArgument("--headless");
+            options.AddArgument("--headless");
             options.AddArgument("window-size=1920,1080");
             options.AddArgument("start-maximized");
             ChromiumDriver driver = new ChromeDriver(options);
